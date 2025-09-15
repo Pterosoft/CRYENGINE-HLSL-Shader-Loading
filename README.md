@@ -20,7 +20,7 @@ The included example shader, Comics.hlsl, demonstrates a stylized “comic book�
 
 
 
-#### High-Level Overview
+### High-Level Overview
 
 
 
@@ -48,11 +48,11 @@ Render the effect directly into a target texture (usually the backbuffer or an i
 
 
 
-#### Key C++ Components
+### Key C++ Components
 
 
 
-###### CFullscreenHlslPass class
+###### ***CFullscreenHlslPass class***
 
 
 
@@ -60,7 +60,7 @@ This is your main controller for loading, compiling, and executing the shader.
 
 
 
-###### FunctionPurposeUpdateSettings(bool enabled, const char\* fileOrName)
+###### ***FunctionPurposeUpdateSettings(bool enabled, const char\* fileOrName)***
 
 
 
@@ -68,7 +68,7 @@ Enables/disables the pass, sets the shader file path, resolves it, and triggers 
 
 
 
-###### EnsureUpToDate()
+###### ***EnsureUpToDate()***
 
 
 
@@ -76,7 +76,7 @@ Checks if the .hlsl file has changed on disk and recompiles if needed.
 
 
 
-###### CompileAndBuildPipeline()
+###### ***CompileAndBuildPipeline()***
 
 
 
@@ -84,7 +84,7 @@ Reads the .hlsl file, detects the entry point (//@entry tag or defaults to Execu
 
 
 
-###### CompileVSInline()
+###### ***CompileVSInline()***
 
 
 
@@ -92,7 +92,7 @@ Compiles a minimal fullscreen triangle vertex shader directly from a string.
 
 
 
-###### BuildRawPipelineForFormat(DXGI\_FORMAT)
+###### ***BuildRawPipelineForFormat(DXGI\_FORMAT)***
 
 
 
@@ -100,7 +100,7 @@ Creates the root signature and pipeline state object (PSO) for the given render 
 
 
 
-###### SetResources(CTexture color, CTexture depth, CTexture normals)
+###### ***SetResources(CTexture color, CTexture depth, CTexture normals)***
 
 
 
@@ -108,7 +108,7 @@ Sets the scene textures to be bound as SRVs.
 
 
 
-###### UpdateParams(const SComicsParams\&)
+###### ***UpdateParams(const SComicsParams\&)***
 
 
 
@@ -116,7 +116,7 @@ Updates the constant buffer with effect parameters.
 
 
 
-###### EnsureDescriptors()
+###### ***EnsureDescriptors()***
 
 
 
@@ -124,7 +124,7 @@ Allocates and updates descriptor heaps for CBV/SRV/Sampler and RTV.
 
 
 
-###### ExecuteRaw(CTexture target)
+###### ***ExecuteRaw(CTexture target)***
 
 
 
@@ -132,7 +132,7 @@ Binds the PSO, root signature, descriptor heaps, and draws the fullscreen triang
 
 
 
-###### Execute()
+###### ***Execute()***
 
 
 
@@ -140,7 +140,7 @@ Public entry point — checks state, updates parameters, and calls ExecuteRaw.
 
 
 
-#### How It Fits in the Graphics Pipeline
+### How It Fits in the Graphics Pipeline
 
 
 
@@ -196,7 +196,7 @@ The pixel shader (ExecutePS in Comics.hlsl) reads scene textures, applies poster
 
 
 
-#### The Shader (Comics.hlsl)
+### The Shader (Comics.hlsl)
 
 
 
@@ -252,7 +252,7 @@ ExecutePS(VSOut IN) — applies the full effect and returns the final pixel colo
 
 
 
-#### Calling It in the Pipeline
+### Calling It in the Pipeline
 
 
 
@@ -280,7 +280,7 @@ This would run your shader as a fullscreen pass into outputTex.
 
 
 
-#### Creating a New Shader (Guidelines)
+### Creating a New Shader (Guidelines)
 
 
 
@@ -352,7 +352,7 @@ Descriptor heap sizes in EnsureDescriptors().
 
 
 
-#### Pro Tips
+### Pro Tips
 
 
 
@@ -369,4 +369,22 @@ Debugging: Use -Zi -Od in debug builds for shader debugging.
 
 
 Formats: The RTV format is auto-detected from the output texture, but if you need HDR, ensure your shader output matches the format.
+
+
+
+
+
+### We need your help!
+
+
+
+We are small indie game studio with no funding and it is becoming hard for us to sustain our development.
+
+
+
+If you can [please consider supporting us on Patreon](www.patreon.com/c/pterosoftstudio).
+
+
+
+Thank you!
 
