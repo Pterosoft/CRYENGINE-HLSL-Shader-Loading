@@ -20,7 +20,7 @@ The included example shader, Comics.hlsl, demonstrates a stylized “comic book�
 
 
 
-### High-Level Overview
+## High-Level Overview
 
 
 
@@ -48,7 +48,7 @@ Render the effect directly into a target texture (usually the backbuffer or an i
 
 
 
-### Key C++ Components
+## Key C++ Components
 
 
 
@@ -140,7 +140,7 @@ Public entry point — checks state, updates parameters, and calls ExecuteRaw.
 
 
 
-### How It Fits in the Graphics Pipeline
+## How It Fits in the Graphics Pipeline
 
 
 
@@ -196,7 +196,7 @@ The pixel shader (ExecutePS in Comics.hlsl) reads scene textures, applies poster
 
 
 
-### The Shader (Comics.hlsl)
+## The Shader (Comics.hlsl)
 
 
 
@@ -252,7 +252,7 @@ ExecutePS(VSOut IN) — applies the full effect and returns the final pixel colo
 
 
 
-### Calling It in the Pipeline
+## Calling It in the Pipeline
 
 
 
@@ -280,7 +280,7 @@ This would run your shader as a fullscreen pass into outputTex.
 
 
 
-### Creating a New Shader (Guidelines)
+## Creating a New Shader (Guidelines)
 
 
 
@@ -352,7 +352,7 @@ Descriptor heap sizes in EnsureDescriptors().
 
 
 
-### Pro Tips
+## Pro Tips
 
 
 
@@ -374,7 +374,7 @@ Formats: The RTV format is auto-detected from the output texture, but if you nee
 
 
 
-### We need your help!
+## We need your help!
 
 
 
